@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  go_app:
+    build: src/
+    volumes:
+      - ./src:/code
+    ports:
+      - "8001:4000"
