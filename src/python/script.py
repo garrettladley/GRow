@@ -111,5 +111,14 @@ def main():
     print(text)
 
 
+def process():
+    for x in os.listdir("trainingdata/raw/"):
+        image = Image.open(os.path.join("test/", x))
+        image = image.convert("L")
+        image = image.point(lambda x: 0 if x < 127.5 else 255, "1")
+        image.save(os.path.join("test/", x))
+
+
 if __name__ == "__main__":
-    main()
+    # process()
+    print("hello world!")
